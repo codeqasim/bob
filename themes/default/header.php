@@ -6,13 +6,13 @@
     <title><?php echo $title; ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="<?php echo $image_path . $favicon; ?>">
+    <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="<?php echo $theme_url; ?>assets/css/style.css"/>
     <link rel="stylesheet" href="<?php echo $theme_url; ?>assets/css/mobile.css"/>
-    <meta name="theme-color" content="<?=$ota_data->color ?>"/>
-    <?php if ($lang_session->type == "rtl") { ?>
-        <link rel="stylesheet" href="<?php echo $theme_url; ?>assets/css/rtl.css"/>
-    <?php } ?>
+    <meta name="theme-color" content=""/>
+<!--    --><?php //if ($lang_session->type == "rtl") { ?>
+<!--        <link rel="stylesheet" href="--><?php //echo $theme_url; ?><!--assets/css/rtl.css"/>-->
+<!--    --><?php //} ?>
     <?php include 'meta.php'; ?>
 
     <script type="text/javascript" src="<?php echo $theme_url; ?>assets/js/jq2.js"></script>
@@ -127,10 +127,8 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if (empty($user_session)) { ?>
-                    <?php if ($ota_data->registration_restrication) { ?>
                         <li><a href="<?php echo base_url('account/login'); ?>"><?= lang('039') ?></a></li>
                         <li><a href="<?php echo base_url('account/signup'); ?>"><?= lang('040') ?></a></li>
-                    <?php } ?>
                 <?php } else { ?>
                     <li><a href="<?php echo base_url('account/bookings'); ?>"><?= lang('056') ?></a></li>
                     <li><a href="<?php echo base_url('account/profile'); ?>"><?= lang('0118') ?></a></li>

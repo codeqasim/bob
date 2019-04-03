@@ -2,7 +2,6 @@
     <footer>
 
         <!-- linkback Powered by -->
-        <?php if (!$ota_data->linkback) { ?>
             <div class="hidden-xs hidden-sm" style="padding:10px;background:#ffffff;">
                 <div class="container">
                     <div style="text-align:center">Powered by <a href="https://www.travelhope.com" target="_blank">
@@ -12,7 +11,6 @@
                     </div>
                 </div>
             </div>
-        <?php } ?>
 
         <!-- linkback Powered by -->
 
@@ -21,14 +19,7 @@
                 <div class="social">
                     <h3><?= lang('0151') ?></h3>
                     <ul class="nav nav-tabs RTL nav-justified">
-                        <?php foreach ($ota_social as $ot_s) { ?>
-                            <li><a data-toggle="tooltip" title="<?= $ot_s->social_name ?>"
-                                   href="<?php if (filter_var($ot_s->social_link, FILTER_VALIDATE_URL)) {
-                                       echo $ot_s->social_link;
-                                   } else {
-                                       echo base_url();
-                                   } ?>" target="blank"><i class="<?= $ot_s->social_class ?>"></i></a></li>
-                        <?php } ?>
+                            <li><a data-toggle="tooltip" target="blank"><i class=""></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -135,12 +126,12 @@
                     <li><a target="_blank" href="<?php echo SERVERURL . 'auth/login'; ?>"><?= lang('0158') ?></a></li>
                     <li><a target="_blank" href="https://www.agentpanel.com/signup"><?= lang('0159') ?></a></li>
                     <li><a target="_blank" href="https://www.agentpanel.com/login"><?= lang('0160') ?></a></li>
-                    <form action="<?= SERVERURL . 'auth/signup/' . $_SESSION['ota_data']->ota->ota_id ?>"
+                    <form action="<?= SERVERURL . 'auth/signup/'  ?>"
                           target="_blank" id="hiddenform"></form>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="javascript:void(0)"><a
-                                href="<?php echo base_url(); ?>"><?= lang('0161') ?> <?= $_SESSION['ota_data']->ota->business_name; ?>
+                                href="<?php echo base_url(); ?>"><?= lang('0161') ?>
                             <span class="sr-only">(current)</span></a></li>
                 </ul>
             </div>

@@ -28,12 +28,12 @@
                 </div>
                 <div class="panel-body">
                     <div class="tab-content">
-                        <?php $i = 0; foreach ($ota_modules as $index=>$module) {
-                            if(!empty($module->is_active) && !empty($main_model[$module->name]->is_active) && $module->is_show_home != 0){  ?>
-                         <div class="tab-pane fade<?=($i == 0 )?' active in':''?>"  id="<?=strtoupper($module->name)?>" role="tabpanel" aria-labelledby="home-tab">
-                          <?php  include $include_path.'views/modules/'.$module->name.'/partials/search.php'; ?>
+                         <div class="tab-pane fade active in"  id="menu_item_hotels" role="tabpanel" aria-labelledby="home-tab">
+                          <?php  include $include_path.'views/modules/hotels/partials/search.php'; ?>
                          </div>
-                        <?php $i=$i+1; }  } ?>
+                        <div class="tab-pane"  id="menu_item_flights" role="tabpanel" aria-labelledby="flight-tab">
+                          <?php  include $include_path.'views/modules/flights/partials/search.php'; ?>
+                         </div>
                     </div>
                 </div>
             </div>

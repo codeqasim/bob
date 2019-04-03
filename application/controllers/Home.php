@@ -4,40 +4,30 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Home extends MY_Controller
 {
-    
+
+
+    /**
+     * Home constructor.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Blog_model');
+    }
+
     public function invalidAuth()
     {
         $this->load->view('errors/html/error_404');
     }
     public function index()
     {
-        $data['countires'] = json_decode(file_get_contents(APPURL . "global/countries?token=" . TOKEN))->data;
-        $params['ota_id'] = $this->getOTAdata()->ota->ota_id;
-        $blog_settings = $this->getOTAdata()->blog_settings;
+
+        $blog_settings = $this->Blog_model->getBlogSettings();
         if(empty($blog_settings->show_home_page)){
             $data['blog'] = [];
         }else{
             $params['limit'] = $blog_settings->number_home_page;
-            $data['blog'] = json_decode(server_request($params, APPURL . 'ota/get_blogs'))->data;
-        }
-        $_SESSION['blog'] = $data['blog'];
-        $data["otadata"] = $this->getOTAdata();
-
-        if(empty($this->session->userdata("ivisa_data")))
-        {
-            $data["ivisa_s"]  = (object)array("from"=>"","to"=>"","from_code"=>"","to_code"=>"");
-        }else{
-            $data["ivisa_s"]  = $this->session->userdata("ivisa_data");
-        }
-//        dd($this->getOTAdata()->ota_pages->home);
-
-        if(!empty($this->getOTAdata()->ota_pages->home))
-        {
-            $data["meta"] = $this->getOTAdata()->ota_pages->home;
-            $data["title"] = $data["meta"]->title;
-        }else{
-            $data["title"] = "Home";
-
+            $data['blog'] =  $this->Blog_model->getBlogs();
         }
         $data["query"] = $this->session->userdata('hotel_search');
         if(empty($data["query"]))
@@ -45,11 +35,9 @@ class Home extends MY_Controller
             $data["query"] = array("city"=>"","from"=>date("Y-m-d"),"to"=> date("Y-m-d", strtotime(date('Y-m-d')."+1 day")),"adults"=>2,"children"=>0);
         }
 
-        $this->load->model('SearchForm');
+        $this->load->model('Searc hForm');
         $searchForm = new SearchForm();
-        $searchForm->ota_id = $this->getOTAdata()->ota->ota_id;
         $data["searchForm"] = $searchForm;
-
         $this->theme->view('home', $data);
     }
     public function subscribe()
