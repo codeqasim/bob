@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56f2cf14-9844-48cb-afa5-edb7c0dac33e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/autoload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/cache/sessions/ci_session4j90cjou3732049c29f1ciseg4nkj9cv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/logs/log-2019-04-02.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/default/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/default/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/default/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/default/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/themes/default/views/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/themes/default/views/home.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,12 +24,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="13" />
+          <entry key="php" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="13" />
+          <entry key="PHP" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -51,11 +46,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Home.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
               <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/config/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -130,15 +134,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Blog.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/Blog_model.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -162,7 +157,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/application/config/autoload.php" />
-        <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/application/models/Blog_model.php" />
         <option value="$PROJECT_DIR$/themes/default/header.php" />
         <option value="$PROJECT_DIR$/themes/default/functions.php" />
@@ -171,6 +165,7 @@
         <option value="$PROJECT_DIR$/themes/default/menu.php" />
         <option value="$PROJECT_DIR$/themes/default/views/modules/hotels/partials/search.php" />
         <option value="$PROJECT_DIR$/application/controllers/Home.php" />
+        <option value="$PROJECT_DIR$/application/config/database.php" />
       </list>
     </option>
   </component>
@@ -266,12 +261,12 @@
       <option name="presentableId" value="Default" />
       <updated>1554217432681</updated>
       <workItem from="1554217434209" duration="105000" />
-      <workItem from="1554229796370" duration="10729000" />
+      <workItem from="1554229796370" duration="10832000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10834000" />
+    <option name="totallyTimeSpent" value="10937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-88" y="52" width="1423" height="810" extended-state="0" />
@@ -316,13 +311,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
           <caret line="60" column="50" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -399,6 +387,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
