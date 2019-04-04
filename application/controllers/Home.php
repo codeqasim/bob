@@ -15,31 +15,14 @@ class Home extends CI_Controller {
         render('front/index', $data);
     }
 
-    public function login()
-    {
-        if(!empty(getOta())){
-            redirect('dashboard');
-        }
-        if(!empty($this->input->post()))
-        {
-            $post = $this->input->post();
-            $post["token"] = "123";
-            $response = json_decode(server_request($post, SERVERNAME . "global/login"));
-            if($response->status == "success")
-            {
-                $this->session->set_userdata("otadata", $response->data);
-                $params = array("ota_id"=>$response->data->ota_id);
-                $modules_ota = json_decode(server_request($params, SERVERNAME . 'ota/modules/getsettings'))->data;
-                $this->session->set_userdata("modules_ota", $modules_ota);
-                redirect('dashboard');
-            }else{
-                $data["error"] = $response->data;
-            }
 
-        }
+        public function login()
+         {
+
         $data['metas'] =  login_meta();
         render('front/login', $data);
     }
+    
     public function forget_password()
     {
         $params = array("email"=>$this->input->post('email'),"token"=>123,"user_type"=>"ota");
