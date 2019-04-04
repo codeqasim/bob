@@ -1,11 +1,12 @@
 <?php /** Configuration file; f0ska xCRUD v.1.6.25; 10/2014 */
+
 class Xcrud_config
 {
     // default connection
     public static $dbname = 'bookinge_api'; // Your database name
     public static $dbuser = 'bookinge_api'; // Your database username
     public static $dbpass = 'bookinge_api'; // // Your database password
-    public static $dbhost = 'localhost'; // Your database host, 'localhost' is default.
+    public static $dbhost = 'bookingengine.co'; // Your database host, 'localhost' is default.
     
     // theme and language
     public static $theme = 'bootstrap'; // can be 'default', 'bootstrap', 'minimal' or your custom. Theme of xCRUD visual presentation. For using bootstrap you need to load it on your page.
@@ -35,16 +36,16 @@ class Xcrud_config
     
     // scripts
     public static $load_bootstrap = false; // turn on, if you want to load bootstrap via xCRUD
-    public static $load_googlemap = true; // loads google map api for 'POINT' type. Turn off, if your site already uses it.
+    public static $load_googlemap = false; // loads google map api for 'POINT' type. Turn off, if your site already uses it.
     public static $load_jquery = false; // loads jQuery, turn it off if you already have jQuery on your page. jQuery version must be at least 1.7. If your jQuery loads in the bottom of page, you must activate $manual_load and use  Xcrud::load_css() & Xcrud::load_js() on your page.
     public static $load_jquery_ui = true; // jQueryUI, turn it on if you already have jQueryUI on your page (datepicker and slider widgets are mandatory).
     public static $load_jcrop = true; // disable, if your page already uses jCrop
     public static $jquery_no_conflict = false; // Includes jQuery.noConflict(). Use according to jQuery documentation.
-    public static $manual_load = false; // Allows you to disable xcruds css and js output, but you can use Xcrud::load_css() & Xcrud::load_js() in your code manually.
+    public static $manual_load = false;  // Allows you to disable xcruds css and js output, but you can use Xcrud::load_css() & Xcrud::load_js() in your code manually.
 
     
     // editor
-    public static $editor_url = '';
+    public static $editor_url = 'assets/js/ckeditor/ckeditor.js';
     //public static $editor_url = 'editors/tinymce/tinymce.min.js'; // URL path to editor script, if you want to use the visual editor.
     //public static $editor_url = 'editors/ckeditor/ckeditor.js';
     public static $editor_init_url = ''; //  URL path to your custom initialization file for editor.
@@ -152,13 +153,12 @@ class Xcrud_config
     public static $default_coord = true;
     public static $default_search = true;
     public static $default_search_text = 'search_here';
-    
-    
+
+
     // xcrud folder url
-    public static $scripts_url = 'http://localhost/travelhope_net/'; // URL to the xCRUD folder, not real path, without a trailing slash, can be relative, e.g. 'some_folder/xcrud' or absolute, e.g. 'http://www.your_site.com/some_folder/xcrud'. If empty - will be detected automatically
+    public static $scripts_url = 'https://www.travelhope.com/'; // URL to the xCRUD folder, not real path, without a trailing slash, can be relative, e.g. 'some_folder/xcrud' or absolute, e.g. 'http://www.your_site.com/some_folder/xcrud'. If empty - will be detected automatically
     public static $urls2abs = true; // makes relative urls to absolute. Turn off if you have some troubles with relative urls.
-    
-    
+
     // system integration options. NO ANY TRAILING SLASHES!
     // urls (relative to $scripts_url or xcrud's folder, if $scripts_url is not defined)
     public static $plugins_uri = 'assets/xcrud/plugins'; // scripts and libraries
@@ -189,6 +189,6 @@ class Xcrud_config
     //Select All Checkbox
     public static $selectAllClass = 'all';
     public static $selectAllId = 'select_all';
-    public static $singleCheckboxClass = 'checkboxcls';    
+    public static $singleCheckboxClass = 'checkboxcls';
 
 }

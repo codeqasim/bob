@@ -1,10 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
+
 defined('FILE_READ_MODE')  OR define('FILE_READ_MODE', 0644);
 defined('FILE_WRITE_MODE') OR define('FILE_WRITE_MODE', 0666);
 defined('DIR_READ_MODE')   OR define('DIR_READ_MODE', 0755);
 defined('DIR_WRITE_MODE')  OR define('DIR_WRITE_MODE', 0755);
+
 defined('FOPEN_READ')                           OR define('FOPEN_READ', 'rb');
 defined('FOPEN_READ_WRITE')                     OR define('FOPEN_READ_WRITE', 'r+b');
 defined('FOPEN_WRITE_CREATE_DESTRUCTIVE')       OR define('FOPEN_WRITE_CREATE_DESTRUCTIVE', 'wb'); // truncates existing file data, use with care
@@ -13,6 +16,7 @@ defined('FOPEN_WRITE_CREATE')                   OR define('FOPEN_WRITE_CREATE', 
 defined('FOPEN_READ_WRITE_CREATE')              OR define('FOPEN_READ_WRITE_CREATE', 'a+b');
 defined('FOPEN_WRITE_CREATE_STRICT')            OR define('FOPEN_WRITE_CREATE_STRICT', 'xb');
 defined('FOPEN_READ_WRITE_CREATE_STRICT')       OR define('FOPEN_READ_WRITE_CREATE_STRICT', 'x+b');
+
 defined('EXIT_SUCCESS')        OR define('EXIT_SUCCESS', 0); // no errors
 defined('EXIT_ERROR')          OR define('EXIT_ERROR', 1); // generic error
 defined('EXIT_CONFIG')         OR define('EXIT_CONFIG', 3); // configuration error
@@ -24,7 +28,23 @@ defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
-define('APPURL','http://localhost/api/api/');
-define('SERVERURL','http://localhost/vendorspanel/');
-define('XCRUD_UPLOAD_PATH', '../../uploads/ota/');
+/* main configuration */
+define('appname','ajubia');
+define('appurl','https://www.ajubia.com');
+define('favicon_path',appurl.'/assets/img/favicon.png');
+define('EMAIL','alert@ajubia.com');
+
+/* veriables for accounts images */
+define('UPLOADS','../../uploads/');
+define('ACCOUNT_IMG',UPLOADS.'accounts/profile/display');
+define('PROFILE_COVER','uploads/accounts/profile/cover/');
+define('PROFILE_DP','uploads/accounts/profile/display/');
+
+define('SERVERNAME','https://bookingengine.co/api/');
+define('THEMEURL','https://travelhope.net/api/');
+define('IMGURL','http://travelorg/uploads/ota/');
+define('IMGUPLOAD','http://travelorg/welcome/');
 define('TOKEN','123');
+
+/* meta */
+define('PAGES_META_IMG',appurl.'/assets/img/meta/');

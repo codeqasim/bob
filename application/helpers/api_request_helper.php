@@ -5,8 +5,7 @@ if (!defined('BASEPATH'))
 
 if (!function_exists('server_request')) {
 
-    function server_request($params, $url)
-    {
+    function server_request($params, $url){
 
         $postdata = http_build_query($params);
         $opts = array('http' =>
@@ -52,91 +51,72 @@ if (!function_exists('curl_server_request')) {
         }
     }
 }
-if ( ! function_exists( "dd" ) ) {
-	function dd( $data ) {
-		echo "<pre>";
-		print_r( $data );
-		echo "</pre>";
-		die();
-	}
-}
 if (!function_exists('render')) {
 
-    function render($view, $data)
-    {
+    function render($view, $data) {
         $CI =& get_instance();
         $data['content'] = $view;
         $data['data'] = $data;
-        $CI->load->view('admin/main', $data);
+        $CI->load->view('front/main', $data);
     }
 
-    if (!function_exists("get_airline_name")) {
-        function get_airline_name($k)
-        {
-            $data = file_get_contents("log/airlines.json");
-            $data = json_decode($data, true);
-            $final = array_filter($data, function ($a) use ($k) {
-                return (in_array($a['id'], (array)$k));
-            });
-            foreach ($final as $value) {
-                $name = $value['name'];
-            }
-            return $name;
-        }
+}
+if (!function_exists('ota_auth')) {
+
+    function ota_auth() {
+        $params = array(
+            "ota_id" => $this->getOTAdata()->ota_id,
+            "secret" => $this->getOTAdata()->secret,
+        );
+        return $params;
     }
+
 }
 
+if (!function_exists('dd')) {
 
-if (!function_exists('curl_call')) {
-    function curl_call($url, $params, $headers = array())
+    function dd($result) {
+
+       echo '<pre>'; print_r($result); die;
+    }
+
+}
+if (!function_exists('getOta')) {
+
+    function getOta()
     {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        if (!empty($headers)) {
-            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        }
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
-        $content = curl_exec($ch);
-	    $err = curl_error($ch);
-
-	    curl_close($ch);
-
-	    if ($err) {
-		    return $err;
-	    } else {
-		    return $content;
-	    }
+        $CI =& get_instance();
+        return $CI->session->userdata("otadata");
     }
 }
+if (!function_exists('paddle_helper')) {
 
-if (!function_exists('currency_converter')) {
-    function currency_converter($currency1,$currency2,$amount)
-    {
-        $data = $_SESSION['currencies_data'];
-        foreach ($data['data'] as $currencies_array){
-            if ($currencies_array['name'] == $currency1){
-                $currencies_array1 = $currencies_array;
-            }
+    function paddle_helper($webhook_url,$callback,$price) {
 
-            if ($currencies_array['name'] == $currency2){
-                $currencies_array2 = $currencies_array;
-            }
-        }
-        //return $currencies_array2;
-        $currency1_rate = 1/$currencies_array1['rate'];
-        $currency2_rate = 1/$currencies_array2['rate'];
-        $new_rate = $currency1_rate/$currency2_rate;
-        return $new_rate*$amount;
+        $data['vendor_id'] = 28632;
+        $data['vendor_auth_code'] = '47b2e26d2eb36236d438c2138a33f6fb70531875e9e95944d0';
+
+        $data['title'] = 'Ota Billing'; // name of product
+        $data['webhook_url'] = $webhook_url; // URL to call when product is purchased
+
+        // You must provide at least one price for the checkout, here we are setting multiple for different currencies.
+        $data['prices'] = $price;
+
+        // Setting some other (optional) data.
+        $data['custom_message'] = '100% Money Back Guarantee!';
+        $data['return_url'] = $callback;
+
+        // Here we make the request to the Paddle API
+        $url = 'https://vendors.paddle.com/api/2.0/product/generate_pay_link';
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+        $response = curl_exec($ch);
+
+        // And handle the response...
+        $data = json_decode($response);
+       return $data;
     }
-}
 
-
-if (!function_exists('validateDate')) {
-	function validateDate($date, $format = 'Y-m-d H:i:s')
-	{
-		$d = DateTime::createFromFormat($format, $date);
-		return $d && $d->format($format) == $date;
-	}
 }

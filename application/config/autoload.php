@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('session','theme','form_validation');
+$autoload['libraries'] = array('session','theme');
 
 /*
 | -------------------------------------------------------------------
@@ -89,21 +89,21 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url', 'api_request', 'pagination','theme_helper' ,'security','language','form');
+$autoload['helper'] = array("url","meta","api_request_helper","widgets_helper","security","addondomain_helper");
 
 /*
 | -------------------------------------------------------------------
 |  Auto-load Config files
 | -------------------------------------------------------------------
 | Prototype:
-|,
+|
 |	$autoload['config'] = array('config1', 'config2');
 |
 | NOTE: This item is intended for use ONLY if you have created custom
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array('theme');
+$autoload['config'] = array();
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('Home_model' => 'Home');
+$autoload['model'] = array();
