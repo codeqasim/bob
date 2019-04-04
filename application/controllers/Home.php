@@ -35,7 +35,7 @@ class Home extends MY_Controller
             $data["query"] = array("city"=>"","from"=>date("Y-m-d"),"to"=> date("Y-m-d", strtotime(date('Y-m-d')."+1 day")),"adults"=>2,"children"=>0);
         }
 
-        $this->load->model('Searc hForm');
+        $this->load->model('SearchForm');
         $searchForm = new SearchForm();
         $data["searchForm"] = $searchForm;
         $this->theme->view('home', $data);
