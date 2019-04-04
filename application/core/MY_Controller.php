@@ -17,14 +17,14 @@ class MY_Controller extends CI_Controller
         $this->otadata = $this->session->userdata('otadata');
         $data["otadata"] = $this->getOTAdata();
         $data["ota_modules"] = $this->session->userdata('modules_ota');
-        if(empty($data["otadata"]))
+       /* if(empty($data["otadata"]))
         {
             redirect('login');
         }
         if(($data["otadata"]->debit_balance > 0) && uri_string() != "account" )
         {
             redirect(base_url("account"));
-        }
+        }*/
         $this->load->vars($data);
     }
     function getOTAdata(){
