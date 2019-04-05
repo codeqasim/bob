@@ -14,7 +14,7 @@ if ( ! function_exists('build_path')) {
         return global_meta($title,$desc,$url,$img,$author);
     }
 
-    function demo_meta()
+    function flights()
     {
         $url = base_url();
         $title = "BookOnBoard - Demo";
